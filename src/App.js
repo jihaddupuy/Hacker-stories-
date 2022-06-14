@@ -31,6 +31,10 @@ function App() {
           <label htmlFor="search">Search:</label>
           <input id="search" type="text"/>
          
+        <hr/>
+        
+        <list/>
+
           {list.map(function(item){
             return (
             <li key={item.objectID}>
