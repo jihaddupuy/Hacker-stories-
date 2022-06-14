@@ -1,10 +1,9 @@
-import logo from './logo.svg';
-import './App.css';
-import { getByTitle } from '@testing-library/react';
 
-function getTitle(title){
-  return title;
-}
+import './App.css';
+
+
+
+
 
 const list =[
   {
@@ -29,7 +28,23 @@ function App() {
   return (
     
       <div>
-          <h1> Hello {getTitle('React')}</h1>
+          <h1> My Hacker Stories </h1>
+          <label htmlFor="search">Search:</label>
+          <input id="search" type="text"/>
+         <ul>
+          {list.map(function (item){
+            return (
+            <li key={item.objectID}>
+              <span>
+                <a herf={item.url}>{item.title}</a>
+                </span>
+                <span>{item.author}</span>
+                <span>{item.num_comments}</span>
+                <span>{item.points}</span>
+                 </li>
+            );
+          })}
+        </ul>
       </div>
   );
 }
